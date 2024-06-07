@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900"
+        rel="stylesheet">
+
+    <title>Adivina la Pelicula</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body style="background-color: #222535; display: flex; flex-direction: column; min-height: 100vh;">
+
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <img src="assets/images/logopaginasinfondo.png" alt="logo">
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="niveles.html"><i class="fa-solid fa-gamepad"></i> Niveles</a></li>
+                <li><a href="#section3"><i class="fa-solid fa-star"></i>Acerca de</a></li>
+                <li><a href="#section4">Puntuacion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section main-banner" id="top" data-section="section1">
+            <div class="guess-container" id="guess-container">
+                <img src="assets/images/pista.jpg" alt="Pista de la película">
+                <input type="text" placeholder="Ingresa el nombre de la película">
+                <div>
+                    <button>Adivinar</button>
+                    <button id="back-button">Volver</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><i class="fa fa-copyright"></i> Copyright 2024 por Los pibes
+
+                        | Desarrollo: <a href="#" rel="sponsored" target="_parent">LosPibesAshei</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/fa945df2d2.js" crossorigin="anonymous"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/niveles.js"></script>
+</body>
+
+</html>

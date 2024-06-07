@@ -2,55 +2,123 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivina la pelicula</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos/index.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>Adivina la Pelicula</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/index.css">
+
 </head>
 
-<body class="d-flex flex-column min-vh-100 text-white" style="background-color:#070F2B;">
-    <header>
-        <nav class="navbar navbar-expand-lg"  style="background-color:#070F2B; color: aliceblue;">
-            <div class="container">
-                <a class="navbar-brand" href="/" style="color: aliceblue;">Adivina la pelicula</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="color:aliceblue ;">
-                    <ul class="navbar-nav" >
-                        <li class="nav-item">   
-                            <a class="nav-link" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Niveles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Ayuda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Acerca de</a>
-                        </li>
-                    </ul>
-                </div>
-                <button class="btn btn-outline-light" type="button">
-                    <i class="fas fa-heart"></i>
-                </button>
-                <button class="btn btn-outline-light ms-2" type="button">
-                    <i class="fas fa-cog"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-    <main>
+<body>
+  <style>
+    .logo img {
+      max-width: 20%;
+      height: auto;
+    }
 
-    </main>
-    <footer>
+    .hidden {
+      display: none;
+    }
 
-    </footer>
-    <script src="https://kit.fontawesome.com/fa945df2d2.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    .guess-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .guess-container img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .guess-container input[type="text"] {
+      padding: 10px;
+      font-size: 1.2em;
+      width: 80%;
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+
+    .guess-container button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 5px; /* Añadido para espacio entre botones */
+    }
+  </style>
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <img src="assets/images/logopaginasinfondo.png" alt="logo">
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="niveles.html"><i class="fa-solid fa-gamepad"></i> Niveles</a></li>
+        <li><a href="#section3"><i class="fa-solid fa-star"></i>Acerca de</a></li>
+        <li><a href="#section4">Puntuacion</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+      <source src="assets/images/videopelislargo.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text">
+      <div class="caption">
+        <h2><em>Adivina</em> la pelicula</h2>
+        <div class="main-button">
+          <div class="scroll-to-section"><a href="#" id="play-button">Juega ya</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guess-container" style="display: none;" id="guess-container">
+      <img src="assets/images/pista.jpg" alt="Pista de la película">
+      <input type="text" placeholder="Ingresa el nombre de la película">
+      <div>
+        <button>Adivinar</button>
+        <button id="back-button">Volver</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><i class="fa fa-copyright"></i> Copyright 2024 por Los pibes
+
+            | Desarrollo: <a href="#" rel="sponsored" target="_parent">LosPibesAshei</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/fa945df2d2.js" crossorigin="anonymous"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/index.js"></script>
+
 </body>
-
 </html>
